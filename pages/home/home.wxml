@@ -1,0 +1,3 @@
+<!--pages/home/home.wxml-->
+<view>按钮</view>
+<button size= 'mini'>按钮</button>
