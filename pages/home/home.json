@@ -1,4 +1,5 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "购物街"
+  "usingComponents": {
+    "w-recommend": "./w-recommend/w-recommend"
+  }
 }
