@@ -1,7 +1,11 @@
 <!--pages/home/home.wxml-->
 <!-- 首页轮播图展示 -->
-
+<w-swiper list="{{banner}}"/>
 <!-- 推荐数据展示 -->
 <w-recommend list="{{recommends}}"/>
+<!-- 本周流行 -->
+<w-popular/>
+<!-- 控制栏 -->
+<w-tab-control/>
 
 

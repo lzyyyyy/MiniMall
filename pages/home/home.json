@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "w-recommend": "./w-recommend/w-recommend"
+    "w-swiper": "/components/w-swiper/w-swiper",
+    "w-tab-control":"/components/w-tab-control/w-tab-control",
+    "w-recommend": "./w-recommend/w-recommend",
+    "w-popular": "./w-popular/w-popular"
   }
 }

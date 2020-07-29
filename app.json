@@ -3,9 +3,9 @@
     "pages/home/home",
     "pages/category/category",
     "pages/cart/cart",
-    "pages/profile/profile",
-    "components/w-swiper/w-swiper",
-    "pages/home/w-recommend/w-recommend"
+    "pages/profile/profile"
+
+
   ],
   "window": {
     "backgroundTextStyle": "light",

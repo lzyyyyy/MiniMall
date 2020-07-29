@@ -1,1 +1,20 @@
-/* pages/home/w-recommend/w-recommend.wxss */
+.recommend{
+  display: flex;
+  font-size: 0;
+  padding-top: 20rpx;
+}
+
+.list-item{
+  flex: 1;
+  text-align: center;
+}
+
+.list-item view{
+  margin-top: 10rpx;
+  font-size: 35rpx;
+}
+
+.list-item image{
+  width: 160rpx;
+  height: 160rpx;
+}
