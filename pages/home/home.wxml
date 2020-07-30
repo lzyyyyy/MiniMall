@@ -6,6 +6,10 @@
 <!-- 本周流行 -->
 <w-popular/>
 <!-- 控制栏 -->
-<w-tab-control/>
+<w-tab-control bind:tabclick="tabClick"/>
+<!-- 商品推荐 -->
+<w-goods goodslist="{{goods[currentType].list}}"/>
+<!-- 回到顶部 -->
+<w-back-top bindtap="onBackTop" wx:if="{{showBackTop}}"/>
 
 
