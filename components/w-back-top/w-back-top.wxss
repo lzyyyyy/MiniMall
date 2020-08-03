@@ -3,6 +3,7 @@
   position: fixed;
   right: 16rpx;
   bottom: 10rpx;
+  z-index: 1;
 }
 
 .back-top image {

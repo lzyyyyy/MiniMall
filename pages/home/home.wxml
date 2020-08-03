@@ -10,6 +10,6 @@
 <!-- 商品推荐 -->
 <w-goods goodslist="{{goods[currentType].list}}"/>
 <!-- 回到顶部 -->
-<w-back-top bindtap="onBackTop" wx:if="{{showBackTop}}"/>
+<w-back-top wx:if="{{showBackTop}}" bindtap="onBackTop"/>
 
 

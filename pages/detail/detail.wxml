@@ -1,0 +1,11 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view class="detail">
+  <w-swiper class='d-swiper' list="{{topImages}}"/>
+  <w-base-info baseInfo="{{baseInfo}}"/>
+  <w-shop-info shopInfo="{{shopInfo}}"/>
+  <w-detail-info detailInfo="{{detailInfo}}"/>
+  <w-param-info paramInfo="{{paramInfo}}"/>
+  <w-comment-info commentInfo="{{commentInfo}}"/>
+  <w-goods goodslist="{{recommends}}"/>
+</scroll-view>
+<w-bottom-bar class="bottombar"/>

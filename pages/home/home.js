@@ -10,7 +10,9 @@ Page({
       'new':{page:1,list:[]},
       'sell':{page:1,list:[]},
     },
-    currentType:'pop'
+    currentType:'pop',
+    topPosition: 0,
+    tabControlTop: 0
   },
   onLoad: function (options) {
     this._getMultiData()
@@ -23,9 +25,11 @@ Page({
   // 事件相关方法
   onBackTop() {
     this.setData({
-      showBackTop: false,
-      topPosition: 0,
-      tabControlTop: 0
+      showBackTop:  false
+    })
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300,
     })
   },
   tabClick(e) {
@@ -37,14 +41,22 @@ Page({
       case 1:
         currentType = 'new'
         break
-      case 2:`
-        currentType = 'sell'`
+      case 2:
+        currentType = 'sell'
         break
     }
     this.setData({
       currentType: currentType
     })    
   },
+  //监听滚动
+  onPageScroll(e){
+    const scrollTop=e.scrollTop
+    this.setData({
+      showBackTop: scrollTop>=1000
+    })
+  },
+  //监听滚动到底部
   onReachBottom() {
     this._getGoodsData(this.data.currentType)
   },
@@ -56,6 +68,7 @@ Page({
         banner: res.data.data.banner.list,
         recommends: res.data.data.recommend.list,
       })
+      
     })
   },
   _getGoodsData(type) {
