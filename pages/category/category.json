@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "w-menu":"./childCpns/w-menu/w-menu"
+  },
   "navigationBarTitleText": "分类"
 }

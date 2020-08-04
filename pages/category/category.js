@@ -1,66 +1,72 @@
-// pages/category/category.js
+import {getCategory,getSubcategory,getCategoryDetail} from "../../service/category.js"
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  data:{
+    categories: [],
+    categoryData: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
+    this._getData()
   },
+  _getData() {
+    //1.请求分类数据
+    getCategory().then(res=>{
+      // console.log(res);
+      const categories = res.data.data.category.list;
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+      
+    //2.初始化每个分类子数据
+      const categoryData = {}
+      for(let i = 0; i < categories.length ; i++) {
+        categoryData[i] = {
+          subcategories: [],
+          categoryDetail: []
+        }
+      }
+      //3.修改data中的数据
+    this.setData({
+        categories: categories,
+        categoryData: categoryData        
+      })
+    //4.请求第一个子类别数据
+    this._getSubcategory(0)
 
+    
+    //5.请求第一个子类别详细数据
+    this._getCategoryDetail(0)
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  _getSubcategory(index) {
+    const maitKey = this.data.categories[index].maitKey
+    getSubcategory(maitKey).then(res=>{
+      const tempcategoryData = this.data.categoryData
+      tempcategoryData[index].subcategories = res.data.data.list
+      this.setData({
+        categoryData: tempcategoryData
+      })      
+    })
   },
+  _getCategoryDetail(currentIndex) {
+    // 1.获取对应的miniWallKey
+    const miniWallKey = this.data.categories[currentIndex].miniWallkey;
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    // 2.请求数据类别的数据
+    this._getRealCategoryDetail(currentIndex, miniWallKey, 'pop');
+    // this._getRealCategoryDetail(currentIndex, miniWallKey, 'new');
+    // this._getRealCategoryDetail(currentIndex, miniWallKey, 'sell');
+  },  
+  _getRealCategoryDetail(index, miniWallKey, type) {
+    getCategoryDetail(miniWallKey, type).then(res => {
+      // 1.获取categoryData
+      const categoryData = this.data.categoryData;
 
+      // 2.修改数据
+      categoryData[index].categoryDetail = res;
+
+      // 3.修改data中的数据
+      this.setData({
+        categoryData: categoryData
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

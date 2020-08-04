@@ -7,10 +7,3 @@
   height: calc(100% - 120rpx);
 }
 
-.bottombar{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
