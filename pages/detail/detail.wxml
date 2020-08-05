@@ -9,5 +9,5 @@
   <w-comment-info commentInfo="{{commentInfo}}"/>
   <w-goods goodslist="{{recommends}}"/>
 </scroll-view>
-<w-bottom-bar/>
+<w-bottom-bar bind:addcart="onAddCart"/>
 

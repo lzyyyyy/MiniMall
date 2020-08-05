@@ -2,6 +2,6 @@
 <view class='category'>
   <w-menu categories="{{categories}}"
           bind:menuclick="menuClick"/>
-  <w-content subcategories="{{categoryData[currentIndex].subcategories}}"
-             categoryDetail="{{categoryData[currentIndex].categoryDetail}}"/>
+  <w-content subcategories="{{categoryData[0].subcategories}}"
+             categoryDetail="{{categoryData[0].categoryDetail.data}}"/>
 </view>

@@ -43,7 +43,9 @@ Page({
       tempcategoryData[index].subcategories = res.data.data.list
       this.setData({
         categoryData: tempcategoryData
-      })      
+      })
+      
+            
     })
   },
   _getCategoryDetail(currentIndex) {
@@ -67,6 +69,7 @@ Page({
       this.setData({
         categoryData: categoryData
       })
+      console.log(this.data.categoryData[0].subcategories);
     })
   },
 })

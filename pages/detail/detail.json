@@ -8,5 +8,6 @@
     "w-comment-info": "./childCpns/w-comment-info/w-comment-info",
     "w-goods": "/components/w-goods/w-goods",
     "w-bottom-bar": "./childCpns/w-bottom-bar/w-bottom-bar"
-  }
+  },
+  "navigationBarTitleText": "商品详情"
 }
